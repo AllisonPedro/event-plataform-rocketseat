@@ -2,9 +2,15 @@ import { gql } from '@apollo/client';
 import * as Apollo from '@apollo/client';
 export type Maybe<T> = T | null;
 export type InputMaybe<T> = Maybe<T>;
-export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
-export type MakeOptional<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]?: Maybe<T[SubKey]> };
-export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]: Maybe<T[SubKey]> };
+export type Exact<T extends { [key: string]: unknown }> = {
+  [K in keyof T]: T[K];
+};
+export type MakeOptional<T, K extends keyof T> = Omit<T, K> & {
+  [SubKey in K]?: Maybe<T[SubKey]>;
+};
+export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & {
+  [SubKey in K]: Maybe<T[SubKey]>;
+};
 const defaultOptions = {} as const;
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
@@ -73,18 +79,15 @@ export type Asset = Node & {
   width?: Maybe<Scalars['Float']>;
 };
 
-
 /** Asset system model */
 export type AssetCreatedAtArgs = {
   variation?: SystemDateTimeFieldVariation;
 };
 
-
 /** Asset system model */
 export type AssetCreatedByArgs = {
   locales?: InputMaybe<Array<Locale>>;
 };
-
 
 /** Asset system model */
 export type AssetDocumentInStagesArgs = {
@@ -93,7 +96,6 @@ export type AssetDocumentInStagesArgs = {
   stages?: Array<Stage>;
 };
 
-
 /** Asset system model */
 export type AssetHistoryArgs = {
   limit?: Scalars['Int'];
@@ -101,25 +103,21 @@ export type AssetHistoryArgs = {
   stageOverride?: InputMaybe<Stage>;
 };
 
-
 /** Asset system model */
 export type AssetLocalizationsArgs = {
   includeCurrent?: Scalars['Boolean'];
   locales?: Array<Locale>;
 };
 
-
 /** Asset system model */
 export type AssetPublishedAtArgs = {
   variation?: SystemDateTimeFieldVariation;
 };
 
-
 /** Asset system model */
 export type AssetPublishedByArgs = {
   locales?: InputMaybe<Array<Locale>>;
 };
-
 
 /** Asset system model */
 export type AssetScheduledInArgs = {
@@ -132,18 +130,15 @@ export type AssetScheduledInArgs = {
   where?: InputMaybe<ScheduledOperationWhereInput>;
 };
 
-
 /** Asset system model */
 export type AssetUpdatedAtArgs = {
   variation?: SystemDateTimeFieldVariation;
 };
 
-
 /** Asset system model */
 export type AssetUpdatedByArgs = {
   locales?: InputMaybe<Array<Locale>>;
 };
-
 
 /** Asset system model */
 export type AssetUrlArgs = {
@@ -349,7 +344,7 @@ export enum AssetOrderByInput {
   UpdatedAtAsc = 'updatedAt_ASC',
   UpdatedAtDesc = 'updatedAt_DESC',
   WidthAsc = 'width_ASC',
-  WidthDesc = 'width_DESC'
+  WidthDesc = 'width_DESC',
 }
 
 /** Transformations for Assets */
@@ -731,11 +726,9 @@ export type Challenge = Node & {
   url: Scalars['String'];
 };
 
-
 export type ChallengeCreatedByArgs = {
   locales?: InputMaybe<Array<Locale>>;
 };
-
 
 export type ChallengeDocumentInStagesArgs = {
   includeCurrent?: Scalars['Boolean'];
@@ -743,18 +736,15 @@ export type ChallengeDocumentInStagesArgs = {
   stages?: Array<Stage>;
 };
 
-
 export type ChallengeHistoryArgs = {
   limit?: Scalars['Int'];
   skip?: Scalars['Int'];
   stageOverride?: InputMaybe<Stage>;
 };
 
-
 export type ChallengePublishedByArgs = {
   locales?: InputMaybe<Array<Locale>>;
 };
-
 
 export type ChallengeScheduledInArgs = {
   after?: InputMaybe<Scalars['String']>;
@@ -765,7 +755,6 @@ export type ChallengeScheduledInArgs = {
   skip?: InputMaybe<Scalars['Int']>;
   where?: InputMaybe<ScheduledOperationWhereInput>;
 };
-
 
 export type ChallengeUpdatedByArgs = {
   locales?: InputMaybe<Array<Locale>>;
@@ -929,7 +918,7 @@ export enum ChallengeOrderByInput {
   UpdatedAtAsc = 'updatedAt_ASC',
   UpdatedAtDesc = 'updatedAt_DESC',
   UrlAsc = 'url_ASC',
-  UrlDesc = 'url_DESC'
+  UrlDesc = 'url_DESC',
 }
 
 export type ChallengeUpdateInput = {
@@ -1148,7 +1137,7 @@ export enum DocumentFileTypes {
   Txt = 'txt',
   Webp = 'webp',
   Xls = 'xls',
-  Xlsx = 'xlsx'
+  Xlsx = 'xlsx',
 }
 
 export type DocumentOutputInput = {
@@ -1204,7 +1193,7 @@ export enum ImageFit {
   /** Resizes the image to fit within the parameters, but as opposed to 'fit:clip' will not scale the image if the image is smaller than the output size. */
   Max = 'max',
   /** Resizes the image to fit the specified parameters exactly by scaling the image to the desired size. The aspect ratio of the image is not respected and the image can be distorted using this method. */
-  Scale = 'scale'
+  Scale = 'scale',
 }
 
 export type ImageResizeInput = {
@@ -1256,16 +1245,13 @@ export type Lesson = Node & {
   videoId: Scalars['String'];
 };
 
-
 export type LessonChallengeArgs = {
   locales?: InputMaybe<Array<Locale>>;
 };
 
-
 export type LessonCreatedByArgs = {
   locales?: InputMaybe<Array<Locale>>;
 };
-
 
 export type LessonDocumentInStagesArgs = {
   includeCurrent?: Scalars['Boolean'];
@@ -1273,18 +1259,15 @@ export type LessonDocumentInStagesArgs = {
   stages?: Array<Stage>;
 };
 
-
 export type LessonHistoryArgs = {
   limit?: Scalars['Int'];
   skip?: Scalars['Int'];
   stageOverride?: InputMaybe<Stage>;
 };
 
-
 export type LessonPublishedByArgs = {
   locales?: InputMaybe<Array<Locale>>;
 };
-
 
 export type LessonScheduledInArgs = {
   after?: InputMaybe<Scalars['String']>;
@@ -1296,11 +1279,9 @@ export type LessonScheduledInArgs = {
   where?: InputMaybe<ScheduledOperationWhereInput>;
 };
 
-
 export type LessonTeacherArgs = {
   locales?: InputMaybe<Array<Locale>>;
 };
-
 
 export type LessonUpdatedByArgs = {
   locales?: InputMaybe<Array<Locale>>;
@@ -1561,12 +1542,12 @@ export enum LessonOrderByInput {
   UpdatedAtAsc = 'updatedAt_ASC',
   UpdatedAtDesc = 'updatedAt_DESC',
   VideoIdAsc = 'videoId_ASC',
-  VideoIdDesc = 'videoId_DESC'
+  VideoIdDesc = 'videoId_DESC',
 }
 
 export enum LessonType {
   Class = 'class',
-  Live = 'live'
+  Live = 'live',
 }
 
 export type LessonUpdateInput = {
@@ -1839,7 +1820,7 @@ export type LessonWhereUniqueInput = {
 /** Locale system enumeration */
 export enum Locale {
   /** System locale */
-  En = 'en'
+  En = 'en',
 }
 
 /** Representing a geolocation point with latitude and longitude */
@@ -1849,7 +1830,6 @@ export type Location = {
   latitude: Scalars['Float'];
   longitude: Scalars['Float'];
 };
-
 
 /** Representing a geolocation point with latitude and longitude */
 export type LocationDistanceArgs = {
@@ -2097,56 +2077,45 @@ export type Mutation = {
   upsertTeacher?: Maybe<Teacher>;
 };
 
-
 export type MutationCreateAssetArgs = {
   data: AssetCreateInput;
 };
-
 
 export type MutationCreateChallengeArgs = {
   data: ChallengeCreateInput;
 };
 
-
 export type MutationCreateLessonArgs = {
   data: LessonCreateInput;
 };
-
 
 export type MutationCreateScheduledReleaseArgs = {
   data: ScheduledReleaseCreateInput;
 };
 
-
 export type MutationCreateSubscriberArgs = {
   data: SubscriberCreateInput;
 };
-
 
 export type MutationCreateTeacherArgs = {
   data: TeacherCreateInput;
 };
 
-
 export type MutationDeleteAssetArgs = {
   where: AssetWhereUniqueInput;
 };
-
 
 export type MutationDeleteChallengeArgs = {
   where: ChallengeWhereUniqueInput;
 };
 
-
 export type MutationDeleteLessonArgs = {
   where: LessonWhereUniqueInput;
 };
 
-
 export type MutationDeleteManyAssetsArgs = {
   where?: InputMaybe<AssetManyWhereInput>;
 };
-
 
 export type MutationDeleteManyAssetsConnectionArgs = {
   after?: InputMaybe<Scalars['ID']>;
@@ -2157,11 +2126,9 @@ export type MutationDeleteManyAssetsConnectionArgs = {
   where?: InputMaybe<AssetManyWhereInput>;
 };
 
-
 export type MutationDeleteManyChallengesArgs = {
   where?: InputMaybe<ChallengeManyWhereInput>;
 };
-
 
 export type MutationDeleteManyChallengesConnectionArgs = {
   after?: InputMaybe<Scalars['ID']>;
@@ -2172,11 +2139,9 @@ export type MutationDeleteManyChallengesConnectionArgs = {
   where?: InputMaybe<ChallengeManyWhereInput>;
 };
 
-
 export type MutationDeleteManyLessonsArgs = {
   where?: InputMaybe<LessonManyWhereInput>;
 };
-
 
 export type MutationDeleteManyLessonsConnectionArgs = {
   after?: InputMaybe<Scalars['ID']>;
@@ -2187,11 +2152,9 @@ export type MutationDeleteManyLessonsConnectionArgs = {
   where?: InputMaybe<LessonManyWhereInput>;
 };
 
-
 export type MutationDeleteManySubscribersArgs = {
   where?: InputMaybe<SubscriberManyWhereInput>;
 };
-
 
 export type MutationDeleteManySubscribersConnectionArgs = {
   after?: InputMaybe<Scalars['ID']>;
@@ -2202,11 +2165,9 @@ export type MutationDeleteManySubscribersConnectionArgs = {
   where?: InputMaybe<SubscriberManyWhereInput>;
 };
 
-
 export type MutationDeleteManyTeachersArgs = {
   where?: InputMaybe<TeacherManyWhereInput>;
 };
-
 
 export type MutationDeleteManyTeachersConnectionArgs = {
   after?: InputMaybe<Scalars['ID']>;
@@ -2217,26 +2178,21 @@ export type MutationDeleteManyTeachersConnectionArgs = {
   where?: InputMaybe<TeacherManyWhereInput>;
 };
 
-
 export type MutationDeleteScheduledOperationArgs = {
   where: ScheduledOperationWhereUniqueInput;
 };
-
 
 export type MutationDeleteScheduledReleaseArgs = {
   where: ScheduledReleaseWhereUniqueInput;
 };
 
-
 export type MutationDeleteSubscriberArgs = {
   where: SubscriberWhereUniqueInput;
 };
 
-
 export type MutationDeleteTeacherArgs = {
   where: TeacherWhereUniqueInput;
 };
-
 
 export type MutationPublishAssetArgs = {
   locales?: InputMaybe<Array<Locale>>;
@@ -2246,18 +2202,15 @@ export type MutationPublishAssetArgs = {
   withDefaultLocale?: InputMaybe<Scalars['Boolean']>;
 };
 
-
 export type MutationPublishChallengeArgs = {
   to?: Array<Stage>;
   where: ChallengeWhereUniqueInput;
 };
 
-
 export type MutationPublishLessonArgs = {
   to?: Array<Stage>;
   where: LessonWhereUniqueInput;
 };
-
 
 export type MutationPublishManyAssetsArgs = {
   locales?: InputMaybe<Array<Locale>>;
@@ -2266,7 +2219,6 @@ export type MutationPublishManyAssetsArgs = {
   where?: InputMaybe<AssetManyWhereInput>;
   withDefaultLocale?: InputMaybe<Scalars['Boolean']>;
 };
-
 
 export type MutationPublishManyAssetsConnectionArgs = {
   after?: InputMaybe<Scalars['ID']>;
@@ -2282,12 +2234,10 @@ export type MutationPublishManyAssetsConnectionArgs = {
   withDefaultLocale?: InputMaybe<Scalars['Boolean']>;
 };
 
-
 export type MutationPublishManyChallengesArgs = {
   to?: Array<Stage>;
   where?: InputMaybe<ChallengeManyWhereInput>;
 };
-
 
 export type MutationPublishManyChallengesConnectionArgs = {
   after?: InputMaybe<Scalars['ID']>;
@@ -2300,12 +2250,10 @@ export type MutationPublishManyChallengesConnectionArgs = {
   where?: InputMaybe<ChallengeManyWhereInput>;
 };
 
-
 export type MutationPublishManyLessonsArgs = {
   to?: Array<Stage>;
   where?: InputMaybe<LessonManyWhereInput>;
 };
-
 
 export type MutationPublishManyLessonsConnectionArgs = {
   after?: InputMaybe<Scalars['ID']>;
@@ -2318,12 +2266,10 @@ export type MutationPublishManyLessonsConnectionArgs = {
   where?: InputMaybe<LessonManyWhereInput>;
 };
 
-
 export type MutationPublishManySubscribersArgs = {
   to?: Array<Stage>;
   where?: InputMaybe<SubscriberManyWhereInput>;
 };
-
 
 export type MutationPublishManySubscribersConnectionArgs = {
   after?: InputMaybe<Scalars['ID']>;
@@ -2336,12 +2282,10 @@ export type MutationPublishManySubscribersConnectionArgs = {
   where?: InputMaybe<SubscriberManyWhereInput>;
 };
 
-
 export type MutationPublishManyTeachersArgs = {
   to?: Array<Stage>;
   where?: InputMaybe<TeacherManyWhereInput>;
 };
-
 
 export type MutationPublishManyTeachersConnectionArgs = {
   after?: InputMaybe<Scalars['ID']>;
@@ -2354,18 +2298,15 @@ export type MutationPublishManyTeachersConnectionArgs = {
   where?: InputMaybe<TeacherManyWhereInput>;
 };
 
-
 export type MutationPublishSubscriberArgs = {
   to?: Array<Stage>;
   where: SubscriberWhereUniqueInput;
 };
 
-
 export type MutationPublishTeacherArgs = {
   to?: Array<Stage>;
   where: TeacherWhereUniqueInput;
 };
-
 
 export type MutationSchedulePublishAssetArgs = {
   locales?: InputMaybe<Array<Locale>>;
@@ -2377,14 +2318,12 @@ export type MutationSchedulePublishAssetArgs = {
   withDefaultLocale?: InputMaybe<Scalars['Boolean']>;
 };
 
-
 export type MutationSchedulePublishChallengeArgs = {
   releaseAt?: InputMaybe<Scalars['DateTime']>;
   releaseId?: InputMaybe<Scalars['String']>;
   to?: Array<Stage>;
   where: ChallengeWhereUniqueInput;
 };
-
 
 export type MutationSchedulePublishLessonArgs = {
   releaseAt?: InputMaybe<Scalars['DateTime']>;
@@ -2393,7 +2332,6 @@ export type MutationSchedulePublishLessonArgs = {
   where: LessonWhereUniqueInput;
 };
 
-
 export type MutationSchedulePublishSubscriberArgs = {
   releaseAt?: InputMaybe<Scalars['DateTime']>;
   releaseId?: InputMaybe<Scalars['String']>;
@@ -2401,14 +2339,12 @@ export type MutationSchedulePublishSubscriberArgs = {
   where: SubscriberWhereUniqueInput;
 };
 
-
 export type MutationSchedulePublishTeacherArgs = {
   releaseAt?: InputMaybe<Scalars['DateTime']>;
   releaseId?: InputMaybe<Scalars['String']>;
   to?: Array<Stage>;
   where: TeacherWhereUniqueInput;
 };
-
 
 export type MutationScheduleUnpublishAssetArgs = {
   from?: Array<Stage>;
@@ -2419,14 +2355,12 @@ export type MutationScheduleUnpublishAssetArgs = {
   where: AssetWhereUniqueInput;
 };
 
-
 export type MutationScheduleUnpublishChallengeArgs = {
   from?: Array<Stage>;
   releaseAt?: InputMaybe<Scalars['DateTime']>;
   releaseId?: InputMaybe<Scalars['String']>;
   where: ChallengeWhereUniqueInput;
 };
-
 
 export type MutationScheduleUnpublishLessonArgs = {
   from?: Array<Stage>;
@@ -2435,14 +2369,12 @@ export type MutationScheduleUnpublishLessonArgs = {
   where: LessonWhereUniqueInput;
 };
 
-
 export type MutationScheduleUnpublishSubscriberArgs = {
   from?: Array<Stage>;
   releaseAt?: InputMaybe<Scalars['DateTime']>;
   releaseId?: InputMaybe<Scalars['String']>;
   where: SubscriberWhereUniqueInput;
 };
-
 
 export type MutationScheduleUnpublishTeacherArgs = {
   from?: Array<Stage>;
@@ -2451,7 +2383,6 @@ export type MutationScheduleUnpublishTeacherArgs = {
   where: TeacherWhereUniqueInput;
 };
 
-
 export type MutationUnpublishAssetArgs = {
   from?: Array<Stage>;
   locales?: InputMaybe<Array<Locale>>;
@@ -2459,18 +2390,15 @@ export type MutationUnpublishAssetArgs = {
   where: AssetWhereUniqueInput;
 };
 
-
 export type MutationUnpublishChallengeArgs = {
   from?: Array<Stage>;
   where: ChallengeWhereUniqueInput;
 };
 
-
 export type MutationUnpublishLessonArgs = {
   from?: Array<Stage>;
   where: LessonWhereUniqueInput;
 };
-
 
 export type MutationUnpublishManyAssetsArgs = {
   from?: Array<Stage>;
@@ -2478,7 +2406,6 @@ export type MutationUnpublishManyAssetsArgs = {
   unpublishBase?: InputMaybe<Scalars['Boolean']>;
   where?: InputMaybe<AssetManyWhereInput>;
 };
-
 
 export type MutationUnpublishManyAssetsConnectionArgs = {
   after?: InputMaybe<Scalars['ID']>;
@@ -2493,12 +2420,10 @@ export type MutationUnpublishManyAssetsConnectionArgs = {
   where?: InputMaybe<AssetManyWhereInput>;
 };
 
-
 export type MutationUnpublishManyChallengesArgs = {
   from?: Array<Stage>;
   where?: InputMaybe<ChallengeManyWhereInput>;
 };
-
 
 export type MutationUnpublishManyChallengesConnectionArgs = {
   after?: InputMaybe<Scalars['ID']>;
@@ -2511,12 +2436,10 @@ export type MutationUnpublishManyChallengesConnectionArgs = {
   where?: InputMaybe<ChallengeManyWhereInput>;
 };
 
-
 export type MutationUnpublishManyLessonsArgs = {
   from?: Array<Stage>;
   where?: InputMaybe<LessonManyWhereInput>;
 };
-
 
 export type MutationUnpublishManyLessonsConnectionArgs = {
   after?: InputMaybe<Scalars['ID']>;
@@ -2529,12 +2452,10 @@ export type MutationUnpublishManyLessonsConnectionArgs = {
   where?: InputMaybe<LessonManyWhereInput>;
 };
 
-
 export type MutationUnpublishManySubscribersArgs = {
   from?: Array<Stage>;
   where?: InputMaybe<SubscriberManyWhereInput>;
 };
-
 
 export type MutationUnpublishManySubscribersConnectionArgs = {
   after?: InputMaybe<Scalars['ID']>;
@@ -2547,12 +2468,10 @@ export type MutationUnpublishManySubscribersConnectionArgs = {
   where?: InputMaybe<SubscriberManyWhereInput>;
 };
 
-
 export type MutationUnpublishManyTeachersArgs = {
   from?: Array<Stage>;
   where?: InputMaybe<TeacherManyWhereInput>;
 };
-
 
 export type MutationUnpublishManyTeachersConnectionArgs = {
   after?: InputMaybe<Scalars['ID']>;
@@ -2565,42 +2484,35 @@ export type MutationUnpublishManyTeachersConnectionArgs = {
   where?: InputMaybe<TeacherManyWhereInput>;
 };
 
-
 export type MutationUnpublishSubscriberArgs = {
   from?: Array<Stage>;
   where: SubscriberWhereUniqueInput;
 };
-
 
 export type MutationUnpublishTeacherArgs = {
   from?: Array<Stage>;
   where: TeacherWhereUniqueInput;
 };
 
-
 export type MutationUpdateAssetArgs = {
   data: AssetUpdateInput;
   where: AssetWhereUniqueInput;
 };
-
 
 export type MutationUpdateChallengeArgs = {
   data: ChallengeUpdateInput;
   where: ChallengeWhereUniqueInput;
 };
 
-
 export type MutationUpdateLessonArgs = {
   data: LessonUpdateInput;
   where: LessonWhereUniqueInput;
 };
 
-
 export type MutationUpdateManyAssetsArgs = {
   data: AssetUpdateManyInput;
   where?: InputMaybe<AssetManyWhereInput>;
 };
-
 
 export type MutationUpdateManyAssetsConnectionArgs = {
   after?: InputMaybe<Scalars['ID']>;
@@ -2612,12 +2524,10 @@ export type MutationUpdateManyAssetsConnectionArgs = {
   where?: InputMaybe<AssetManyWhereInput>;
 };
 
-
 export type MutationUpdateManyChallengesArgs = {
   data: ChallengeUpdateManyInput;
   where?: InputMaybe<ChallengeManyWhereInput>;
 };
-
 
 export type MutationUpdateManyChallengesConnectionArgs = {
   after?: InputMaybe<Scalars['ID']>;
@@ -2629,12 +2539,10 @@ export type MutationUpdateManyChallengesConnectionArgs = {
   where?: InputMaybe<ChallengeManyWhereInput>;
 };
 
-
 export type MutationUpdateManyLessonsArgs = {
   data: LessonUpdateManyInput;
   where?: InputMaybe<LessonManyWhereInput>;
 };
-
 
 export type MutationUpdateManyLessonsConnectionArgs = {
   after?: InputMaybe<Scalars['ID']>;
@@ -2646,12 +2554,10 @@ export type MutationUpdateManyLessonsConnectionArgs = {
   where?: InputMaybe<LessonManyWhereInput>;
 };
 
-
 export type MutationUpdateManySubscribersArgs = {
   data: SubscriberUpdateManyInput;
   where?: InputMaybe<SubscriberManyWhereInput>;
 };
-
 
 export type MutationUpdateManySubscribersConnectionArgs = {
   after?: InputMaybe<Scalars['ID']>;
@@ -2663,12 +2569,10 @@ export type MutationUpdateManySubscribersConnectionArgs = {
   where?: InputMaybe<SubscriberManyWhereInput>;
 };
 
-
 export type MutationUpdateManyTeachersArgs = {
   data: TeacherUpdateManyInput;
   where?: InputMaybe<TeacherManyWhereInput>;
 };
-
 
 export type MutationUpdateManyTeachersConnectionArgs = {
   after?: InputMaybe<Scalars['ID']>;
@@ -2680,48 +2584,40 @@ export type MutationUpdateManyTeachersConnectionArgs = {
   where?: InputMaybe<TeacherManyWhereInput>;
 };
 
-
 export type MutationUpdateScheduledReleaseArgs = {
   data: ScheduledReleaseUpdateInput;
   where: ScheduledReleaseWhereUniqueInput;
 };
-
 
 export type MutationUpdateSubscriberArgs = {
   data: SubscriberUpdateInput;
   where: SubscriberWhereUniqueInput;
 };
 
-
 export type MutationUpdateTeacherArgs = {
   data: TeacherUpdateInput;
   where: TeacherWhereUniqueInput;
 };
-
 
 export type MutationUpsertAssetArgs = {
   upsert: AssetUpsertInput;
   where: AssetWhereUniqueInput;
 };
 
-
 export type MutationUpsertChallengeArgs = {
   upsert: ChallengeUpsertInput;
   where: ChallengeWhereUniqueInput;
 };
-
 
 export type MutationUpsertLessonArgs = {
   upsert: LessonUpsertInput;
   where: LessonWhereUniqueInput;
 };
 
-
 export type MutationUpsertSubscriberArgs = {
   upsert: SubscriberUpsertInput;
   where: SubscriberWhereUniqueInput;
 };
-
 
 export type MutationUpsertTeacherArgs = {
   upsert: TeacherUpsertInput;
@@ -2822,18 +2718,15 @@ export type Query = {
   usersConnection: UserConnection;
 };
 
-
 export type QueryAssetArgs = {
   locales?: Array<Locale>;
   stage?: Stage;
   where: AssetWhereUniqueInput;
 };
 
-
 export type QueryAssetVersionArgs = {
   where: VersionWhereInput;
 };
-
 
 export type QueryAssetsArgs = {
   after?: InputMaybe<Scalars['String']>;
@@ -2847,7 +2740,6 @@ export type QueryAssetsArgs = {
   where?: InputMaybe<AssetWhereInput>;
 };
 
-
 export type QueryAssetsConnectionArgs = {
   after?: InputMaybe<Scalars['String']>;
   before?: InputMaybe<Scalars['String']>;
@@ -2860,18 +2752,15 @@ export type QueryAssetsConnectionArgs = {
   where?: InputMaybe<AssetWhereInput>;
 };
 
-
 export type QueryChallengeArgs = {
   locales?: Array<Locale>;
   stage?: Stage;
   where: ChallengeWhereUniqueInput;
 };
 
-
 export type QueryChallengeVersionArgs = {
   where: VersionWhereInput;
 };
-
 
 export type QueryChallengesArgs = {
   after?: InputMaybe<Scalars['String']>;
@@ -2885,7 +2774,6 @@ export type QueryChallengesArgs = {
   where?: InputMaybe<ChallengeWhereInput>;
 };
 
-
 export type QueryChallengesConnectionArgs = {
   after?: InputMaybe<Scalars['String']>;
   before?: InputMaybe<Scalars['String']>;
@@ -2898,18 +2786,15 @@ export type QueryChallengesConnectionArgs = {
   where?: InputMaybe<ChallengeWhereInput>;
 };
 
-
 export type QueryLessonArgs = {
   locales?: Array<Locale>;
   stage?: Stage;
   where: LessonWhereUniqueInput;
 };
 
-
 export type QueryLessonVersionArgs = {
   where: VersionWhereInput;
 };
-
 
 export type QueryLessonsArgs = {
   after?: InputMaybe<Scalars['String']>;
@@ -2923,7 +2808,6 @@ export type QueryLessonsArgs = {
   where?: InputMaybe<LessonWhereInput>;
 };
 
-
 export type QueryLessonsConnectionArgs = {
   after?: InputMaybe<Scalars['String']>;
   before?: InputMaybe<Scalars['String']>;
@@ -2936,20 +2820,17 @@ export type QueryLessonsConnectionArgs = {
   where?: InputMaybe<LessonWhereInput>;
 };
 
-
 export type QueryNodeArgs = {
   id: Scalars['ID'];
   locales?: Array<Locale>;
   stage?: Stage;
 };
 
-
 export type QueryScheduledOperationArgs = {
   locales?: Array<Locale>;
   stage?: Stage;
   where: ScheduledOperationWhereUniqueInput;
 };
-
 
 export type QueryScheduledOperationsArgs = {
   after?: InputMaybe<Scalars['String']>;
@@ -2963,7 +2844,6 @@ export type QueryScheduledOperationsArgs = {
   where?: InputMaybe<ScheduledOperationWhereInput>;
 };
 
-
 export type QueryScheduledOperationsConnectionArgs = {
   after?: InputMaybe<Scalars['String']>;
   before?: InputMaybe<Scalars['String']>;
@@ -2976,13 +2856,11 @@ export type QueryScheduledOperationsConnectionArgs = {
   where?: InputMaybe<ScheduledOperationWhereInput>;
 };
 
-
 export type QueryScheduledReleaseArgs = {
   locales?: Array<Locale>;
   stage?: Stage;
   where: ScheduledReleaseWhereUniqueInput;
 };
-
 
 export type QueryScheduledReleasesArgs = {
   after?: InputMaybe<Scalars['String']>;
@@ -2996,7 +2874,6 @@ export type QueryScheduledReleasesArgs = {
   where?: InputMaybe<ScheduledReleaseWhereInput>;
 };
 
-
 export type QueryScheduledReleasesConnectionArgs = {
   after?: InputMaybe<Scalars['String']>;
   before?: InputMaybe<Scalars['String']>;
@@ -3009,18 +2886,15 @@ export type QueryScheduledReleasesConnectionArgs = {
   where?: InputMaybe<ScheduledReleaseWhereInput>;
 };
 
-
 export type QuerySubscriberArgs = {
   locales?: Array<Locale>;
   stage?: Stage;
   where: SubscriberWhereUniqueInput;
 };
 
-
 export type QuerySubscriberVersionArgs = {
   where: VersionWhereInput;
 };
-
 
 export type QuerySubscribersArgs = {
   after?: InputMaybe<Scalars['String']>;
@@ -3034,7 +2908,6 @@ export type QuerySubscribersArgs = {
   where?: InputMaybe<SubscriberWhereInput>;
 };
 
-
 export type QuerySubscribersConnectionArgs = {
   after?: InputMaybe<Scalars['String']>;
   before?: InputMaybe<Scalars['String']>;
@@ -3047,18 +2920,15 @@ export type QuerySubscribersConnectionArgs = {
   where?: InputMaybe<SubscriberWhereInput>;
 };
 
-
 export type QueryTeacherArgs = {
   locales?: Array<Locale>;
   stage?: Stage;
   where: TeacherWhereUniqueInput;
 };
 
-
 export type QueryTeacherVersionArgs = {
   where: VersionWhereInput;
 };
-
 
 export type QueryTeachersArgs = {
   after?: InputMaybe<Scalars['String']>;
@@ -3072,7 +2942,6 @@ export type QueryTeachersArgs = {
   where?: InputMaybe<TeacherWhereInput>;
 };
 
-
 export type QueryTeachersConnectionArgs = {
   after?: InputMaybe<Scalars['String']>;
   before?: InputMaybe<Scalars['String']>;
@@ -3085,13 +2954,11 @@ export type QueryTeachersConnectionArgs = {
   where?: InputMaybe<TeacherWhereInput>;
 };
 
-
 export type QueryUserArgs = {
   locales?: Array<Locale>;
   stage?: Stage;
   where: UserWhereUniqueInput;
 };
-
 
 export type QueryUsersArgs = {
   after?: InputMaybe<Scalars['String']>;
@@ -3104,7 +2971,6 @@ export type QueryUsersArgs = {
   stage?: Stage;
   where?: InputMaybe<UserWhereInput>;
 };
-
 
 export type QueryUsersConnectionArgs = {
   after?: InputMaybe<Scalars['String']>;
@@ -3182,7 +3048,6 @@ export type ScheduledOperation = Node & {
   updatedBy?: Maybe<User>;
 };
 
-
 /** Scheduled Operation system model */
 export type ScheduledOperationAffectedDocumentsArgs = {
   after?: InputMaybe<Scalars['String']>;
@@ -3193,12 +3058,10 @@ export type ScheduledOperationAffectedDocumentsArgs = {
   skip?: InputMaybe<Scalars['Int']>;
 };
 
-
 /** Scheduled Operation system model */
 export type ScheduledOperationCreatedByArgs = {
   locales?: InputMaybe<Array<Locale>>;
 };
-
 
 /** Scheduled Operation system model */
 export type ScheduledOperationDocumentInStagesArgs = {
@@ -3207,25 +3070,27 @@ export type ScheduledOperationDocumentInStagesArgs = {
   stages?: Array<Stage>;
 };
 
-
 /** Scheduled Operation system model */
 export type ScheduledOperationPublishedByArgs = {
   locales?: InputMaybe<Array<Locale>>;
 };
-
 
 /** Scheduled Operation system model */
 export type ScheduledOperationReleaseArgs = {
   locales?: InputMaybe<Array<Locale>>;
 };
 
-
 /** Scheduled Operation system model */
 export type ScheduledOperationUpdatedByArgs = {
   locales?: InputMaybe<Array<Locale>>;
 };
 
-export type ScheduledOperationAffectedDocument = Asset | Challenge | Lesson | Subscriber | Teacher;
+export type ScheduledOperationAffectedDocument =
+  | Asset
+  | Challenge
+  | Lesson
+  | Subscriber
+  | Teacher;
 
 export type ScheduledOperationConnectInput = {
   /** Allow to specify document position in list of connected documents, will default to appending at end of list */
@@ -3402,7 +3267,7 @@ export enum ScheduledOperationOrderByInput {
   StatusAsc = 'status_ASC',
   StatusDesc = 'status_DESC',
   UpdatedAtAsc = 'updatedAt_ASC',
-  UpdatedAtDesc = 'updatedAt_DESC'
+  UpdatedAtDesc = 'updatedAt_DESC',
 }
 
 /** System Scheduled Operation Status */
@@ -3411,7 +3276,7 @@ export enum ScheduledOperationStatus {
   Completed = 'COMPLETED',
   Failed = 'FAILED',
   InProgress = 'IN_PROGRESS',
-  Pending = 'PENDING'
+  Pending = 'PENDING',
 }
 
 export type ScheduledOperationUpdateManyInlineInput = {
@@ -3599,12 +3464,10 @@ export type ScheduledRelease = Node & {
   updatedBy?: Maybe<User>;
 };
 
-
 /** Scheduled Release system model */
 export type ScheduledReleaseCreatedByArgs = {
   locales?: InputMaybe<Array<Locale>>;
 };
-
 
 /** Scheduled Release system model */
 export type ScheduledReleaseDocumentInStagesArgs = {
@@ -3612,7 +3475,6 @@ export type ScheduledReleaseDocumentInStagesArgs = {
   inheritLocale?: Scalars['Boolean'];
   stages?: Array<Stage>;
 };
-
 
 /** Scheduled Release system model */
 export type ScheduledReleaseOperationsArgs = {
@@ -3626,12 +3488,10 @@ export type ScheduledReleaseOperationsArgs = {
   where?: InputMaybe<ScheduledOperationWhereInput>;
 };
 
-
 /** Scheduled Release system model */
 export type ScheduledReleasePublishedByArgs = {
   locales?: InputMaybe<Array<Locale>>;
 };
-
 
 /** Scheduled Release system model */
 export type ScheduledReleaseUpdatedByArgs = {
@@ -3877,7 +3737,7 @@ export enum ScheduledReleaseOrderByInput {
   TitleAsc = 'title_ASC',
   TitleDesc = 'title_DESC',
   UpdatedAtAsc = 'updatedAt_ASC',
-  UpdatedAtDesc = 'updatedAt_DESC'
+  UpdatedAtDesc = 'updatedAt_DESC',
 }
 
 /** System Scheduled Release Status */
@@ -3885,7 +3745,7 @@ export enum ScheduledReleaseStatus {
   Completed = 'COMPLETED',
   Failed = 'FAILED',
   InProgress = 'IN_PROGRESS',
-  Pending = 'PENDING'
+  Pending = 'PENDING',
 }
 
 export type ScheduledReleaseUpdateInput = {
@@ -4141,7 +4001,7 @@ export enum Stage {
   /** The Draft is the default stage for all your content. */
   Draft = 'DRAFT',
   /** The Published stage is where you can publish your content to. */
-  Published = 'PUBLISHED'
+  Published = 'PUBLISHED',
 }
 
 export type Subscriber = Node & {
@@ -4171,11 +4031,9 @@ export type Subscriber = Node & {
   updatedBy?: Maybe<User>;
 };
 
-
 export type SubscriberCreatedByArgs = {
   locales?: InputMaybe<Array<Locale>>;
 };
-
 
 export type SubscriberDocumentInStagesArgs = {
   includeCurrent?: Scalars['Boolean'];
@@ -4183,18 +4041,15 @@ export type SubscriberDocumentInStagesArgs = {
   stages?: Array<Stage>;
 };
 
-
 export type SubscriberHistoryArgs = {
   limit?: Scalars['Int'];
   skip?: Scalars['Int'];
   stageOverride?: InputMaybe<Stage>;
 };
 
-
 export type SubscriberPublishedByArgs = {
   locales?: InputMaybe<Array<Locale>>;
 };
-
 
 export type SubscriberScheduledInArgs = {
   after?: InputMaybe<Scalars['String']>;
@@ -4205,7 +4060,6 @@ export type SubscriberScheduledInArgs = {
   skip?: InputMaybe<Scalars['Int']>;
   where?: InputMaybe<ScheduledOperationWhereInput>;
 };
-
 
 export type SubscriberUpdatedByArgs = {
   locales?: InputMaybe<Array<Locale>>;
@@ -4390,7 +4244,7 @@ export enum SubscriberOrderByInput {
   PublishedAtAsc = 'publishedAt_ASC',
   PublishedAtDesc = 'publishedAt_DESC',
   UpdatedAtAsc = 'updatedAt_ASC',
-  UpdatedAtDesc = 'updatedAt_DESC'
+  UpdatedAtDesc = 'updatedAt_DESC',
 }
 
 export type SubscriberUpdateInput = {
@@ -4591,7 +4445,7 @@ export type SubscriberWhereUniqueInput = {
 export enum SystemDateTimeFieldVariation {
   Base = 'BASE',
   Combined = 'COMBINED',
-  Localization = 'LOCALIZATION'
+  Localization = 'LOCALIZATION',
 }
 
 export type Teacher = Node & {
@@ -4623,11 +4477,9 @@ export type Teacher = Node & {
   updatedBy?: Maybe<User>;
 };
 
-
 export type TeacherCreatedByArgs = {
   locales?: InputMaybe<Array<Locale>>;
 };
-
 
 export type TeacherDocumentInStagesArgs = {
   includeCurrent?: Scalars['Boolean'];
@@ -4635,13 +4487,11 @@ export type TeacherDocumentInStagesArgs = {
   stages?: Array<Stage>;
 };
 
-
 export type TeacherHistoryArgs = {
   limit?: Scalars['Int'];
   skip?: Scalars['Int'];
   stageOverride?: InputMaybe<Stage>;
 };
-
 
 export type TeacherLessonsArgs = {
   after?: InputMaybe<Scalars['String']>;
@@ -4654,11 +4504,9 @@ export type TeacherLessonsArgs = {
   where?: InputMaybe<LessonWhereInput>;
 };
 
-
 export type TeacherPublishedByArgs = {
   locales?: InputMaybe<Array<Locale>>;
 };
-
 
 export type TeacherScheduledInArgs = {
   after?: InputMaybe<Scalars['String']>;
@@ -4669,7 +4517,6 @@ export type TeacherScheduledInArgs = {
   skip?: InputMaybe<Scalars['Int']>;
   where?: InputMaybe<ScheduledOperationWhereInput>;
 };
-
 
 export type TeacherUpdatedByArgs = {
   locales?: InputMaybe<Array<Locale>>;
@@ -4880,7 +4727,7 @@ export enum TeacherOrderByInput {
   PublishedAtAsc = 'publishedAt_ASC',
   PublishedAtDesc = 'publishedAt_DESC',
   UpdatedAtAsc = 'updatedAt_ASC',
-  UpdatedAtDesc = 'updatedAt_DESC'
+  UpdatedAtDesc = 'updatedAt_DESC',
 }
 
 export type TeacherUpdateInput = {
@@ -5135,7 +4982,6 @@ export type User = Node & {
   updatedAt: Scalars['DateTime'];
 };
 
-
 /** User system model */
 export type UserDocumentInStagesArgs = {
   includeCurrent?: Scalars['Boolean'];
@@ -5184,7 +5030,7 @@ export enum UserKind {
   Member = 'MEMBER',
   Pat = 'PAT',
   Public = 'PUBLIC',
-  Webhook = 'WEBHOOK'
+  Webhook = 'WEBHOOK',
 }
 
 /** Identifies documents */
@@ -5327,7 +5173,7 @@ export enum UserOrderByInput {
   PublishedAtAsc = 'publishedAt_ASC',
   PublishedAtDesc = 'publishedAt_DESC',
   UpdatedAtAsc = 'updatedAt_ASC',
-  UpdatedAtDesc = 'updatedAt_DESC'
+  UpdatedAtDesc = 'updatedAt_DESC',
 }
 
 export type UserUpdateManyInlineInput = {
@@ -5514,7 +5360,7 @@ export enum _FilterKind {
   RelationalSingle = 'relational_single',
   RelationalSome = 'relational_some',
   Search = 'search',
-  StartsWith = 'starts_with'
+  StartsWith = 'starts_with',
 }
 
 export enum _MutationInputFieldKind {
@@ -5524,7 +5370,7 @@ export enum _MutationInputFieldKind {
   RichTextWithEmbeds = 'richTextWithEmbeds',
   Scalar = 'scalar',
   Union = 'union',
-  Virtual = 'virtual'
+  Virtual = 'virtual',
 }
 
 export enum _MutationKind {
@@ -5539,33 +5385,33 @@ export enum _MutationKind {
   UnpublishMany = 'unpublishMany',
   Update = 'update',
   UpdateMany = 'updateMany',
-  Upsert = 'upsert'
+  Upsert = 'upsert',
 }
 
 export enum _OrderDirection {
   Asc = 'asc',
-  Desc = 'desc'
+  Desc = 'desc',
 }
 
 export enum _RelationInputCardinality {
   Many = 'many',
-  One = 'one'
+  One = 'one',
 }
 
 export enum _RelationInputKind {
   Create = 'create',
-  Update = 'update'
+  Update = 'update',
 }
 
 export enum _RelationKind {
   Regular = 'regular',
-  Union = 'union'
+  Union = 'union',
 }
 
 export enum _SystemDateTimeFieldVariation {
   Base = 'base',
   Combined = 'combined',
-  Localization = 'localization'
+  Localization = 'localization',
 }
 
 export type CreateSubscriberMutationVariables = Exact<{
@@ -5573,30 +5419,56 @@ export type CreateSubscriberMutationVariables = Exact<{
   email: Scalars['String'];
 }>;
 
-
-export type CreateSubscriberMutation = { __typename?: 'Mutation', createSubscriber?: { __typename?: 'Subscriber', id: string } | null };
+export type CreateSubscriberMutation = {
+  __typename?: 'Mutation';
+  createSubscriber?: { __typename?: 'Subscriber'; id: string } | null;
+};
 
 export type GetLessonBySlugQueryVariables = Exact<{
   slug?: InputMaybe<Scalars['String']>;
 }>;
 
+export type GetLessonBySlugQuery = {
+  __typename?: 'Query';
+  lesson?: {
+    __typename?: 'Lesson';
+    title: string;
+    videoId: string;
+    description?: string | null;
+    teacher?: {
+      __typename?: 'Teacher';
+      bio: string;
+      avatarURL: string;
+      name: string;
+    } | null;
+  } | null;
+};
 
-export type GetLessonBySlugQuery = { __typename?: 'Query', lesson?: { __typename?: 'Lesson', title: string, videoId: string, description?: string | null, teacher?: { __typename?: 'Teacher', bio: string, avatarURL: string, name: string } | null } | null };
+export type GetLessonsQueryVariables = Exact<{ [key: string]: never }>;
 
-export type GetLessonsQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type GetLessonsQuery = { __typename?: 'Query', lessons: Array<{ __typename?: 'Lesson', id: string, lessonType: LessonType, availableAt?: any | null, slug: string, title: string }> };
-
+export type GetLessonsQuery = {
+  __typename?: 'Query';
+  lessons: Array<{
+    __typename?: 'Lesson';
+    id: string;
+    lessonType: LessonType;
+    availableAt?: any | null;
+    slug: string;
+    title: string;
+  }>;
+};
 
 export const CreateSubscriberDocument = gql`
-    mutation CreateSubscriber($name: String!, $email: String!) {
-  createSubscriber(data: {name: $name, email: $email}) {
-    id
+  mutation CreateSubscriber($name: String!, $email: String!) {
+    createSubscriber(data: { name: $name, email: $email }) {
+      id
+    }
   }
-}
-    `;
-export type CreateSubscriberMutationFn = Apollo.MutationFunction<CreateSubscriberMutation, CreateSubscriberMutationVariables>;
+`;
+export type CreateSubscriberMutationFn = Apollo.MutationFunction<
+  CreateSubscriberMutation,
+  CreateSubscriberMutationVariables
+>;
 
 /**
  * __useCreateSubscriberMutation__
@@ -5616,27 +5488,41 @@ export type CreateSubscriberMutationFn = Apollo.MutationFunction<CreateSubscribe
  *   },
  * });
  */
-export function useCreateSubscriberMutation(baseOptions?: Apollo.MutationHookOptions<CreateSubscriberMutation, CreateSubscriberMutationVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useMutation<CreateSubscriberMutation, CreateSubscriberMutationVariables>(CreateSubscriberDocument, options);
-      }
-export type CreateSubscriberMutationHookResult = ReturnType<typeof useCreateSubscriberMutation>;
-export type CreateSubscriberMutationResult = Apollo.MutationResult<CreateSubscriberMutation>;
-export type CreateSubscriberMutationOptions = Apollo.BaseMutationOptions<CreateSubscriberMutation, CreateSubscriberMutationVariables>;
+export function useCreateSubscriberMutation(
+  baseOptions?: Apollo.MutationHookOptions<
+    CreateSubscriberMutation,
+    CreateSubscriberMutationVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useMutation<
+    CreateSubscriberMutation,
+    CreateSubscriberMutationVariables
+  >(CreateSubscriberDocument, options);
+}
+export type CreateSubscriberMutationHookResult = ReturnType<
+  typeof useCreateSubscriberMutation
+>;
+export type CreateSubscriberMutationResult =
+  Apollo.MutationResult<CreateSubscriberMutation>;
+export type CreateSubscriberMutationOptions = Apollo.BaseMutationOptions<
+  CreateSubscriberMutation,
+  CreateSubscriberMutationVariables
+>;
 export const GetLessonBySlugDocument = gql`
-    query GetLessonBySlug($slug: String) {
-  lesson(where: {slug: $slug}) {
-    title
-    videoId
-    description
-    teacher {
-      bio
-      avatarURL
-      name
+  query GetLessonBySlug($slug: String) {
+    lesson(where: { slug: $slug }) {
+      title
+      videoId
+      description
+      teacher {
+        bio
+        avatarURL
+        name
+      }
     }
   }
-}
-    `;
+`;
 
 /**
  * __useGetLessonBySlugQuery__
@@ -5654,28 +5540,51 @@ export const GetLessonBySlugDocument = gql`
  *   },
  * });
  */
-export function useGetLessonBySlugQuery(baseOptions?: Apollo.QueryHookOptions<GetLessonBySlugQuery, GetLessonBySlugQueryVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<GetLessonBySlugQuery, GetLessonBySlugQueryVariables>(GetLessonBySlugDocument, options);
-      }
-export function useGetLessonBySlugLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetLessonBySlugQuery, GetLessonBySlugQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<GetLessonBySlugQuery, GetLessonBySlugQueryVariables>(GetLessonBySlugDocument, options);
-        }
-export type GetLessonBySlugQueryHookResult = ReturnType<typeof useGetLessonBySlugQuery>;
-export type GetLessonBySlugLazyQueryHookResult = ReturnType<typeof useGetLessonBySlugLazyQuery>;
-export type GetLessonBySlugQueryResult = Apollo.QueryResult<GetLessonBySlugQuery, GetLessonBySlugQueryVariables>;
-export const GetLessonsDocument = gql`
-    query GetLessons {
-  lessons(orderBy: videoId_DESC, stage: PUBLISHED) {
-    id
-    lessonType
-    availableAt
-    slug
-    title
-  }
+export function useGetLessonBySlugQuery(
+  baseOptions?: Apollo.QueryHookOptions<
+    GetLessonBySlugQuery,
+    GetLessonBySlugQueryVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useQuery<GetLessonBySlugQuery, GetLessonBySlugQueryVariables>(
+    GetLessonBySlugDocument,
+    options
+  );
 }
-    `;
+export function useGetLessonBySlugLazyQuery(
+  baseOptions?: Apollo.LazyQueryHookOptions<
+    GetLessonBySlugQuery,
+    GetLessonBySlugQueryVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useLazyQuery<
+    GetLessonBySlugQuery,
+    GetLessonBySlugQueryVariables
+  >(GetLessonBySlugDocument, options);
+}
+export type GetLessonBySlugQueryHookResult = ReturnType<
+  typeof useGetLessonBySlugQuery
+>;
+export type GetLessonBySlugLazyQueryHookResult = ReturnType<
+  typeof useGetLessonBySlugLazyQuery
+>;
+export type GetLessonBySlugQueryResult = Apollo.QueryResult<
+  GetLessonBySlugQuery,
+  GetLessonBySlugQueryVariables
+>;
+export const GetLessonsDocument = gql`
+  query GetLessons {
+    lessons(orderBy: videoId_DESC, stage: PUBLISHED) {
+      id
+      lessonType
+      availableAt
+      slug
+      title
+    }
+  }
+`;
 
 /**
  * __useGetLessonsQuery__
@@ -5692,14 +5601,35 @@ export const GetLessonsDocument = gql`
  *   },
  * });
  */
-export function useGetLessonsQuery(baseOptions?: Apollo.QueryHookOptions<GetLessonsQuery, GetLessonsQueryVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<GetLessonsQuery, GetLessonsQueryVariables>(GetLessonsDocument, options);
-      }
-export function useGetLessonsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetLessonsQuery, GetLessonsQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<GetLessonsQuery, GetLessonsQueryVariables>(GetLessonsDocument, options);
-        }
+export function useGetLessonsQuery(
+  baseOptions?: Apollo.QueryHookOptions<
+    GetLessonsQuery,
+    GetLessonsQueryVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useQuery<GetLessonsQuery, GetLessonsQueryVariables>(
+    GetLessonsDocument,
+    options
+  );
+}
+export function useGetLessonsLazyQuery(
+  baseOptions?: Apollo.LazyQueryHookOptions<
+    GetLessonsQuery,
+    GetLessonsQueryVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useLazyQuery<GetLessonsQuery, GetLessonsQueryVariables>(
+    GetLessonsDocument,
+    options
+  );
+}
 export type GetLessonsQueryHookResult = ReturnType<typeof useGetLessonsQuery>;
-export type GetLessonsLazyQueryHookResult = ReturnType<typeof useGetLessonsLazyQuery>;
-export type GetLessonsQueryResult = Apollo.QueryResult<GetLessonsQuery, GetLessonsQueryVariables>;
+export type GetLessonsLazyQueryHookResult = ReturnType<
+  typeof useGetLessonsLazyQuery
+>;
+export type GetLessonsQueryResult = Apollo.QueryResult<
+  GetLessonsQuery,
+  GetLessonsQueryVariables
+>;
