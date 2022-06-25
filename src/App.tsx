@@ -1,4 +1,3 @@
-import { Event } from './pages/Event.jsx';
 import { Router } from './Router.js';
 import { ApolloProvider } from '@apollo/client';
 import { client } from './lib/apollo';
